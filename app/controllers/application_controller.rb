@@ -6,5 +6,7 @@ class ApplicationController < ActionController::Base
 
 	def configure_devise_params
 		devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password, :password_confirmation])
+		#permite que o usuário envie fotos na pagina de edição
+		devise_parameter_sanitizer.permit(:account_update, keys: [:photo, :name, :email, :password, :password_confirmation])
 	end
 end

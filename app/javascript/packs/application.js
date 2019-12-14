@@ -13,4 +13,15 @@ import bulmaQuickview from 'bulma-quickview/src/js'
 //procura a classe load que add um efeito quando o elemento desaparecer ou aparecer na tela 
 document.addEventListener('turbolinks:load', function() {
   let quickviews = bulmaQuickview.attach()
+
+  //exibir nome do arquivo quando for selecionado para fazer upload
+  const fileInput = document.querySelectorAll('input[type=file].file-input')
+  fileInput.forEach(input => {
+    input.onchange = () => {
+      if (input.files.length > 0) {
+        const fileName = input.parentNode.querySelector(".file-name")
+        fileName.textContent = input.files[0].name
+      }
+    }
+  })
 })
