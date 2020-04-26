@@ -7,6 +7,8 @@ PWA clone do Messenger
 
 - Rails 6.0.1
 
+- Ngrok was used in PWA testing
+
 ## Configuration
 
 - Clone the project:
